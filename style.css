@@ -1,0 +1,372 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+:root {
+
+    /* ### Primary */
+
+    --Softorange: hsl(35, 77%, 62%);
+    --Softred: hsl(5, 85%, 63%);
+    
+    /* ### Neutral */
+    
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayishblue: hsl(233, 8%, 79%);
+    --Darkgrayishblue: hsl(236, 13%, 42%);
+    --Verydarkblue: hsl(240, 100%, 5%);
+
+}
+
+@font-face {
+    font-family: inter;
+    src: url(assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+body {
+    font-family: inter, sans-serif;
+    font-size: 0.8rem;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--Off-white);
+    margin: 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+img {
+    height: 7rem;
+}
+
+hr {
+ 
+    margin: 2rem 0 2rem 0;
+}
+
+nav li {
+    display: flex;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding-left: 0;
+}
+
+
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    height: 2rem;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+}
+
+#headerdesktopnav ul {
+    display: none;
+}
+
+#headerdesktopnav button{
+    border: none
+}
+
+#headerdesktopnav img {
+    width: 3rem;
+    height: 1rem;
+}
+
+
+.sidebarmobilecontainer {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    top: 0;
+    background-color: rgba(197, 198, 206, .80);
+    margin-top: 0;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    display: none; 
+}
+
+.sidebarmobilecontainer.expanded {
+    display: flex; 
+    transform: translateX(0);
+    opacity: 1; 
+}
+
+#sidebarmobilecontainer img {
+    height: 2rem;
+}
+
+
+.sidebarmobilenav {
+    background-color: var(--Off-white);
+    margin-left: auto;
+    width: 70vw;
+    height: 100vh;
+    padding: 1.5rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarmobilenav button {
+    border: none;
+    align-self: flex-end;
+}
+
+.sidebarmobilenav ul {
+    display: flex;
+    flex-direction: column;
+    height: 15rem;
+    justify-content: space-around;
+    margin-bottom: auto;
+    margin-top: 80%;
+}
+
+.web3image {
+    height: 20rem;
+    width: 100%;
+}
+
+.web3heading {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.headline p {
+    height: 7rem;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.readmore {
+    background-color: var(--Softred);
+    color: black;
+    width: 8rem;
+    height: 2.5rem;
+    text-align: center;
+    padding: 8px;
+    margin-top: auto;
+    font-weight: 800;
+    letter-spacing: 0.3rem;
+}
+
+.readmore:hover {
+    background-color: var(--Verydarkblue);
+    color: var(--Off-white);
+}
+
+.new {
+    background-color: var(--Verydarkblue);
+    color: var(--Off-white);
+    padding: 2rem;
+    margin: 3rem 0 1rem 0;
+}
+
+.new h2 {
+    color: var(--Softorange);
+    margin-top: 0;
+    font-size: xx-large;
+}
+
+.new p {
+    color: var(--Grayishblue);
+}
+
+.morearticles h2 {
+    color: var(--Softred);
+    margin-top: 0;
+
+}
+
+
+.morearticles a {
+    display: flex;
+}
+
+.morearticles div {
+    margin-left: 1rem;
+
+}
+
+.new article:hover, .new p:hover {
+    color: var(--Softorange);
+}
+
+.morearticles a:hover {
+    color: var(--Softred);
+}
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+@media only screen and (min-width: 450px) {
+    body {
+        margin: 3.5rem 3.5rem 0 3.5rem;
+    }
+
+    #headerdesktopnav {
+        display: flex;
+        width: 50%;
+    }
+
+    #headerdesktopnav ul {
+        display: flex;
+    }
+
+    #headerdesktopnav button {
+        display: none;
+    }
+
+    main {
+        height: 93%;
+        gap: 1rem;
+        display: grid;
+        grid-template-rows: 33rem 1fr;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 
+            'web3 new'
+            'other other';
+    }
+
+    .headline section {
+        display: flex;
+    }
+
+    .headline article {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header ul {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+    }
+
+    .headline {
+        grid-area: web3;
+    }
+
+    .new {
+        grid-area: new;
+        height: 100%;
+        margin: 0;
+    }
+
+    .morearticles {
+        grid-area: other;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .morearticles div *:not(img) {
+        margin: 0 0px 10px 10px;
+    }
+
+    .morearticles h2 {
+        font-size: 1.5rem
+    }
+
+  }
