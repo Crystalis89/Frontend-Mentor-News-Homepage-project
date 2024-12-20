@@ -270,6 +270,11 @@ a {
     color: var(--Grayishblue);
 }
 
+.morearticles ul {
+        display: flex;
+        width: 90vw;
+}
+
 .morearticles h2 {
     color: var(--Softred);
     margin-top: 0;
